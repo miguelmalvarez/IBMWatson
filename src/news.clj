@@ -13,3 +13,28 @@
 										 "end" "now"
 										 "maxResults" 5
 										 "return" "original"}}))
+
+(defn positives
+	[text]
+	(client/get root_url {:query-params {"apikey" api_key
+										 "outputMode" "json" 
+										 "start" "now-1d"
+										 "end" "now"
+										 "maxResults" 5
+										 "q.enriched.url.title" text
+										 "q.enriched.url.enrichedTitle.docSentiment" "|type=positive,score=>0.5|"
+										 "return" "original"}}))
+
+
+(defn negatives
+	[text]
+	(client/get root_url {:query-params {"apikey" api_key
+										 "outputMode" "json" 
+										 "start" "now-1d"
+										 "end" "now"
+										 "maxResults" 5
+										 "q.enriched.url.title" text
+										 "q.enriched.url.enrichedTitle.docSentiment" "|type=negative,score=>0.5|"
+										 "return" "original"}}))
+
+(print (positives "IBM"))
