@@ -11,3 +11,4 @@ pom.xml.asc
 .lein-failures
 .DS_Store
 .nrepl-port
+resources/config.edn
