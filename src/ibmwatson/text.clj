@@ -1,7 +1,7 @@
 (ns ibmwatson.text
 	(:require [clj-http.client :as client]))  	
 
-(def api_key "c660d29868a62f95066894851a65e8f2cbcf8256")
+(def api_key YOUR_API)
 (def root_url "http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities")
 
 (defn annotate

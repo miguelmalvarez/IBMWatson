@@ -1,7 +1,7 @@
 (ns ibmwatson.news
 	(:require [clj-http.client :as client]))  	
 
-(def api_key "c660d29868a62f95066894851a65e8f2cbcf8256")
+(def api_key YOUR_API)
 (def root_url "https://access.alchemyapi.com/calls/data/GetNews")
 
 
@@ -38,7 +38,3 @@
 										 "q.enriched.url.title" text
 										 "q.enriched.url.enrichedTitle.docSentiment" (str "|type=negative,score=>" min-prob "|")
 										 "return" "original"}}))
-
-(print (positives "Greece" 0.9))
-
-(print (negatives "Greece" 0.9))
