@@ -14,27 +14,31 @@
 										 "maxResults" 5
 										 "return" "original"}}))
 
+;; TODO: Default values
 (defn positives
-	[text]
+	[text min-prob]
 	(client/get root_url {:query-params {"apikey" api_key
 										 "outputMode" "json" 
 										 "start" "now-1d"
 										 "end" "now"
 										 "maxResults" 5
 										 "q.enriched.url.title" text
-										 "q.enriched.url.enrichedTitle.docSentiment" "|type=positive,score=>0.5|"
+										 "q.enriched.url.enrichedTitle.docSentiment" (str "|type=positive,score=>" min-prob "|")
 										 "return" "original"}}))
 
 
-(defn negatives
-	[text]
+;; TODO: Default values
+(defn negatives	
+	[text min-prob]
 	(client/get root_url {:query-params {"apikey" api_key
 										 "outputMode" "json" 
 										 "start" "now-1d"
 										 "end" "now"
 										 "maxResults" 5
 										 "q.enriched.url.title" text
-										 "q.enriched.url.enrichedTitle.docSentiment" "|type=negative,score=>0.5|"
+										 "q.enriched.url.enrichedTitle.docSentiment" (str "|type=negative,score=>" min-prob "|")
 										 "return" "original"}}))
 
-(print (positives "IBM"))
+(print (positives "Greece" 0.9))
+
+(print (negatives "Greece" 0.9))
