@@ -1,12 +1,11 @@
 (ns ibmwatson.news
 	(:require [clj-http.client :as client]))  	
 
-(def api_key YOUR_API)
+;; TODO: Config file
 (def root_url "https://access.alchemyapi.com/calls/data/GetNews")
 
-
 (defn sample 
-	[]
+	[api_key]
 	(client/get root_url {:query-params {"apikey" api_key
 										 "outputMode" "json" 
 										 "start" "now-1d"
@@ -16,7 +15,7 @@
 
 ;; TODO: Default values
 (defn positives
-	[text min-prob]
+	[text min-prob api_key]
 	(client/get root_url {:query-params {"apikey" api_key
 										 "outputMode" "json" 
 										 "start" "now-1d"
@@ -29,7 +28,7 @@
 
 ;; TODO: Default values
 (defn negatives	
-	[text min-prob]
+	[text min-prob api_key]
 	(client/get root_url {:query-params {"apikey" api_key
 										 "outputMode" "json" 
 										 "start" "now-1d"

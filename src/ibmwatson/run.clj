@@ -1,6 +1,9 @@
 (ns ibmwatson.run
 	(:require [ibmwatson.news :as news]
-			  [ibmwatson.text :as text]))
+			  [ibmwatson.text :as text]
+			  [clojure.edn :as edn]))
+
+(def api_key (:api_key (edn/read-string (slurp "resources/config.edn"))))
 
 (def text "Clouded Leopards Born in Thailand Via Artificial Insemination. For only the second time, 
 		   a litter of clouded leopard cubs has been born as the result of an artificial insemination. 
@@ -14,10 +17,9 @@
 (def query "Greece")
 
 (println "TEXT")
-(print (text/annotate text))
-
+(print (text/annotate text api_key))
 
 (println "NEWS")
-(print (news/sample))
-(print (news/positives query 0.9))
-(print (news/negatives query 0.9))
+(print (news/sample api_key))
+(print (news/positives query 0.9 api_key))
+(print (news/negatives query 0.9 api_key))
