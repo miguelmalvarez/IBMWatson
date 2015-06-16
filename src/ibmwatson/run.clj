@@ -17,7 +17,8 @@
 (def query "Greece")
 
 (println "TEXT")
-(print (text/annotate text api_key))
+(print (text/entities text api_key))
+(print (text/entity-level-sentiment text api_key))
 
 (println "NEWS")
 (print (news/sample api_key))
