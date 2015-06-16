@@ -11,7 +11,7 @@
 										 "start" "now-1d"
 										 "end" "now"
 										 "maxResults" 5
-										 "return" "original"}}))
+										 "return" "original,enriched.url.title"}}))
 
 ;; TODO: Default values
 (defn positives
@@ -23,7 +23,7 @@
 										 "maxResults" 5
 										 "q.enriched.url.title" text
 										 "q.enriched.url.enrichedTitle.docSentiment" (str "|type=positive,score=>" min-prob "|")
-										 "return" "original"}}))
+										 "return" "original,enriched.url.title"}}))
 
 
 ;; TODO: Default values
@@ -36,4 +36,4 @@
 										 "maxResults" 5
 										 "q.enriched.url.title" text
 										 "q.enriched.url.enrichedTitle.docSentiment" (str "|type=negative,score=>" min-prob "|")
-										 "return" "original"}}))
+										 "return" "original,enriched.url.title"}}))
