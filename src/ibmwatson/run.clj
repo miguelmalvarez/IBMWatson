@@ -12,7 +12,7 @@
 		   Paweena Thuwanut, a former JoGayle Howard Postdoctoral Fellow at SCBI, and Wanlaya Tipkantha, 
 		   a doctoral candidate at Chulalongkorn University, who also studied at SCBI.
 
-		   All this happened at the White House, where the President Barack Obaba was given a speech.")
+		   All this happened at the White House, where the President Barack Obama was given a speech.")
 
 (def query "Greece")
 
@@ -21,5 +21,5 @@
 
 (println "NEWS")
 (print (news/sample api_key))
-(print (news/positives query 0.9 api_key))
-(print (news/negatives query 0.9 api_key))
+(print (news/positives query 0.6 api_key))
+(print (news/negatives query 0.6 api_key))
