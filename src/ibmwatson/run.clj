@@ -5,12 +5,8 @@
 
 (def api_key (:api_key (edn/read-string (slurp "resources/config.edn"))))
 
-(def text "Dick Costolo: Search for new Twitter CEO is legitimate
-		   Dick Costolo is stepping down as Twitter CEO on July 1 but that didn’t 
-		   stop him from publicly discussing the company onstage at Bloomberg’s 
-		   tech conference in San Francisco on Tuesday. He also dispelled the notion 
-		   that Twitter's board had already decided cofounder Jack Dorsey will be his 
-		   permanent successor.")
+(def text 
+	"Donald Trump announced that he is going to run for the Republican party's presidential")
 
 (def query "Greece")
 
