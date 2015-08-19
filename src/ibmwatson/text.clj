@@ -27,7 +27,8 @@
 	(let [params {"apikey" api_key
 				  "text" text
 				  "outputMode" "json"
-				  "disambiguated" 1}]
+				  "disambiguated" 1
+                                  "sentiment" 1}]
 	(text-call text "TextGetRankedNamedEntities" params)))
 
 (defn relations
